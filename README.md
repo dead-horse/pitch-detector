@@ -22,6 +22,6 @@ pitchDetector.detune
 ```
 
 Also you can check the [demo page](https://github.com/dead-horse/pitch-detector/blob/master/demo.html) to see how to use it.
-
+![demo pictrue](http://ww3.sinaimg.cn/large/69c1d4acgw1eclwwy09s8j20cx07k74l.jpg)
 ## License
 MIT
