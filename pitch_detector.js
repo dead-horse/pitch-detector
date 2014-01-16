@@ -1,6 +1,6 @@
 /*global navigator, AudioContext, Uint8Array*/
 (function (exports) {
-  var noteStrings = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+  var NOTE_STRINGS = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
   var audioContext = new AudioContext();
 
   function getUserMedia(dictionary, callback) {
@@ -78,6 +78,7 @@
   function Detector() {
     this.pitch;
     this.note;
+    this.noteString = '';
     this.detune = 0;
     this.analyser = null;
     this.buflen = 2048;
@@ -108,6 +109,7 @@
       this.pitch = ac;
       this.note = noteFromPitch(ac);
       this.detune = centsOffFromPitch(ac, this.note);
+      this.noteString = NOTE_STRINGS[this.note % 12];
     }
     requestAnimationFrame(this.updatePitch.bind(this));
   };

@@ -14,8 +14,9 @@ Then you can use `pitchDetector.startLiveInput` to use web audio and start detec
 After that, you get these:
 
 ```
-pitchDetector.note
 pitchDetector.pitch
+pitchDetector.note
+pitchDetector.noteString
 pitchDetector.detune
 ```
 ## License
