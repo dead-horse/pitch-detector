@@ -1,7 +1,7 @@
 pitch-detector
 ==============
 
-a pitch detector base web audio
+A pitch detector base on web audio.
 
 Inspired by [cwilso/PitchDetect](https://github.com/cwilso/PitchDetect).
 But provide more frinedly API.
