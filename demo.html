@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script src="http://cwilso.github.io/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></script>
+    <script src="./pitch_detector.js"></script>
+    <script>
+      function flash(callback) {
+        window.requestAnimationFrame = window.requestAnimationFrame ||
+           window.mozRequestAnimationFrame ||
+           window.webkitRequestAnimationFrame;
+        return window.requestAnimationFrame(callback);
+      }
+      window.onload = function () {
+        pitchDetector.startLiveInput();
+        function display() {
+          console.log(pitchDetector.pitch);
+          if (pitchDetector.pitch) {
+            document.getElementById('pitch').innerHTML = pitchDetector.pitch;
+            document.getElementById('note').innerHTML = pitchDetector.note;
+            document.getElementById('note-string').innerHTML = pitchDetector.noteString;
+          }
+          flash(display);
+        };
+        display();
+      };
+    </script>
+  </head>
+  <body>
+    <div>pitch: <span id="pitch"></span></div>
+    <div>note: <span id="note"></span></div>
+    <div>noteString: <span id="note-string"></span></div>
+  </body>
+</html>

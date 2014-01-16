@@ -9,7 +9,7 @@
         navigator.webkitGetUserMedia ||
         navigator.mozGetUserMedia;
       navigator.getUserMedia(dictionary, callback, function (err) {
-        console.log('Stream generation failed.');
+        console.log('Stream generation failed: ', err.message);
       });
     } catch (err) {
       console.log('getUserMedia throw exception: ', err.message);
